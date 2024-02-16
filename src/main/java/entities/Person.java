@@ -4,6 +4,7 @@
  */
 package entities;
 
+import enums.Sex;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -15,9 +16,9 @@ public class Person {
     private String name;
     private String forName;
     private LocalDate birthday;
+    private Sex sex;
 
-    public Person(String danlta, String alphonse) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Person() {
     }
 
     public String getName() {
@@ -44,6 +45,24 @@ public class Person {
         this.birthday = birthday;
     }
 
+    public Person(String name, String forName, LocalDate birthday, Sex sex) {
+        this.name = name;
+        this.forName = forName;
+        this.birthday = birthday;
+        this.sex = sex;
+    }
+
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 29 * hash + Objects.hashCode(this.name);
+        hash = 29 * hash + Objects.hashCode(this.forName);
+        hash = 29 * hash + Objects.hashCode(this.birthday);
+        hash = 29 * hash + Objects.hashCode(this.sex);
+        return hash;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -51,23 +70,9 @@ public class Person {
         sb.append("name=").append(name);
         sb.append(", forName=").append(forName);
         sb.append(", birthday=").append(birthday);
+        sb.append(", sex=").append(sex);
         sb.append('}');
         return sb.toString();
-    }
-
-    public Person(String name, String forName, LocalDate birthday) {
-        this.name = name;
-        this.forName = forName;
-        this.birthday = birthday;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 71 * hash + Objects.hashCode(this.name);
-        hash = 71 * hash + Objects.hashCode(this.forName);
-        hash = 71 * hash + Objects.hashCode(this.birthday);
-        return hash;
     }
 
     @Override
@@ -88,8 +93,20 @@ public class Person {
         if (!Objects.equals(this.forName, other.forName)) {
             return false;
         }
+        if (!Objects.equals(this.sex, other.sex)) {
+            return false;
+        }
         return Objects.equals(this.birthday, other.birthday);
     }
-    
+
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
+
+   
     
 }

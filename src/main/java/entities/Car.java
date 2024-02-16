@@ -26,7 +26,7 @@ public class Car {
         return sb.toString();
     }
 
-    public Car(String brand, Color color, int power) {
+    public Car(String brand, Color color, int power) throws RuntimeException {
         this.brand = brand;
         this.color = color;
         this.setPower(power);
@@ -59,7 +59,7 @@ public class Car {
         if (power > 0){
             this.power = power;
         }else{
-            this.power = 1;
+            throw new RuntimeException("Puissance doit être positive");
         }
     }
     

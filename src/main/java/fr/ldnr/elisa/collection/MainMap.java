@@ -15,7 +15,7 @@ public class MainMap {
     public static void main(String[] args){
         Map<String, Integer> desserts = new HashMap<>();
         
-        desserts.put("Mousse au chocolar", 5);
+        desserts.put("Mousse au chocolat", 5);
         desserts.put("Glasse au chocolat", 9);
         desserts.put("Tarte aux pommes", 18);
         desserts.put("Mystère", 5);

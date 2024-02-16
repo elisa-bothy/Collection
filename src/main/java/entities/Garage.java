@@ -5,34 +5,31 @@
 package entities;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author Elisa Bothy
  */
-public class Garage {
-   private List<Car> cars;
+public class Garage extends ArrayList<Car> {
+    private String sign;//L'enseigne du garage
 
-    public Garage(){
-        this.cars = new ArrayList<>();
+    public String getSign() {
+        return sign;
     }
 
+    public Garage(String sign) {
+        super();
+        this.sign = sign;
+    }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Garage{");
-        sb.append("cars=").append(cars);
+        sb.append("Enseigne=").append(sign);
+        sb.append(",").append(super.toString());
         sb.append('}');
         return sb.toString();
     }
-
-    public List<Car> getCars() {
-        return cars;
-    }
-
-    public void setCars(List<Car> cars) {
-        this.cars = cars;
-    }
+    
 }

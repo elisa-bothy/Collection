@@ -19,7 +19,7 @@ public class MainMap {
         desserts.put("Glasse au chocolat", 9);
         desserts.put("Tarte aux pommes", 18);
         desserts.put("Mystère", 5);
-        desserts.put("Mousse au chocolar", 5);
+        desserts.put("Mousse au chocolat", 5);
         
         for(String key : desserts.keySet()){
             System.out.println("key = " + key + "||value:" + desserts.get(key));
